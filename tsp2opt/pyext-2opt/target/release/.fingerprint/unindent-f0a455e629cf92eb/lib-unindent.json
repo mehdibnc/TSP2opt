@@ -1,0 +1,1 @@
+{"rustc":17138091804324965747,"features":"[]","target":15749011368032954282,"profile":10803726696109476711,"path":4204026793576239070,"deps":[],"local":[{"CheckDepInfo":{"dep_info":"release/.fingerprint/unindent-f0a455e629cf92eb/dep-lib-unindent"}}],"rustflags":["-C","link-arg=-undefined","-C","link-arg=dynamic_lookup"],"metadata":10374369828540625574,"config":0}

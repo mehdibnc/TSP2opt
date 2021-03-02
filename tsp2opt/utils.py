@@ -8,7 +8,7 @@ def check_type(distances):
         distances = distances.astype(np.float64)
         return distances.tolist()
     elif isinstance(distances, list):
-        distances = map(lambda x : np.float64(x), distances)
+        map(lambda x : np.float64(x), distances)
         return distances
     raise TypeError(f"Expected distances matrix to be of type list or np.ndarray but got {type(distances)} instead.")
 
@@ -53,4 +53,3 @@ def is_symmetric(distances):
     """ Indicates whether distances is symmetric.
     """
     return np.allclose(np.array(distances), np.array(distances).T)
-    

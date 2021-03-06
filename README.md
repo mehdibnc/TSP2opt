@@ -14,7 +14,7 @@ The current version relies on the availability of a distance matrix, i.e. matrix
 Here is a small example : 
 
 ```python
-from tsp2opt.solver import tsp_solver
+from tsp_2opt.solver import tsp_solver
 distances = [[0, 2, 3], [2, 0, 4], [3, 4, 0]]
 route, length = tsp_solver(distances)
 ```
@@ -25,5 +25,3 @@ The solution obtained to a TSP instance after performing the 2-opt heuristic dep
 tsp_solver(distances, workers, n) 
 ```
 
-
-Author : Mehdi Bennaceur

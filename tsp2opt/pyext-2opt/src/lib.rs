@@ -31,13 +31,11 @@ fn solver_2opt(route: Vec<i32>, distances: Vec<Vec<f64>>, symmetric: bool) -> Py
                 if symmetric {
                     cost_change = distances[best[i-1] as usize][best[j-1] as usize] + distances[best[i] as usize][best[j] as usize] - distances[best[i-1] as usize][best[i] as usize] - distances[best[j-1] as usize][best[j] as usize];
                     if cost_change < 0.0 {
-                        // println!("Got improvement {:?}", cost_change);
                         for k in 0..j-i {
                             best[i+k as usize] = compbest[j-1-k as usize];
                         }
                         improved = true;
                         compbest.clone_from_slice(&best);
-                        // println!("Route {:?}", best);
                     }
                 }
                 else {

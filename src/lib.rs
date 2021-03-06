@@ -68,7 +68,7 @@ fn solver_2opt_parr(py: Python, route: Vec<i32>, distances: Vec<Vec<f64>>, symme
 
 
 #[pymodule]
-fn rust_2opt(py: Python, m: &PyModule) -> PyResult<()> {
+fn tsp_2opt(py: Python, m: &PyModule) -> PyResult<()> {
     m.add_wrapped(wrap_pyfunction!(solver_2opt))?;
     m.add_wrapped(wrap_pyfunction!(solver_2opt_parr))?;
     Ok(())

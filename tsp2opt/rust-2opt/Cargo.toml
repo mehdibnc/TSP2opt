@@ -1,14 +1,13 @@
 [package]
-name = "pyext-2opt"
+name = "rust-2opt"
 version = "0.1.0"
-authors = ["mehdi"]
+authors = ["mehdi <mehdi-bs@live.fr>"]
 edition = "2018"
 
 [lib]
-name = "2opt"
-crate-type = ["dylib"]
+name = "rust_2opt"
+crate-type = ["cdylib"]
 
 [dependencies.pyo3]
 version = "0.13.2"
 features = ["extension-module"]
-

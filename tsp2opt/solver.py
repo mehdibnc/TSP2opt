@@ -1,5 +1,5 @@
 from concurrent.futures import ThreadPoolExecutor
-from lib2opt import solver_2opt_parr
+from rust_2opt import solver_2opt_parr
 from utils import get_best_from_batch, get_init_route, is_symmetric, check_type
 import numpy as np 
 import time 

@@ -7,6 +7,8 @@ To install the library, run:
 
 `pip install tsp_2opt`
 
+For now, the library is working only on MacOS X platforms.
+
 ## Use 
 
 The current version relies on the availability of a distance matrix, i.e. matrix giving pair-wise distance between cities in the TSP instance.
@@ -24,4 +26,3 @@ The solution obtained to a TSP instance after performing the 2-opt heuristic dep
 ```python
 tsp_solver(distances, workers, n) 
 ```
-

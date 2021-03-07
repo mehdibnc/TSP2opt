@@ -5,7 +5,19 @@ import numpy as np
 
 
 def tsp_solver(distances: np.ndarray, workers: int = 5, r: int = 10):
-    """ 
+    """ TSP Solver using 2-opt local search.
+        The local search is ran r times in parralel using workers 
+        workers at most.
+
+        Args:
+            distances: distance matrix, giving pairwise distances between
+                       each node.
+            workers: maximum workers for parralel computations
+            r: number of times to run 2-opt with different starting points
+
+        Returns:
+            best: solution found, list of nodes to visit.
+            length: length of the solution found
     """
     #-- Check input type
     distances = check_type(distances)

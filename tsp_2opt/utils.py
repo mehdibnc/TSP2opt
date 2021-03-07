@@ -2,7 +2,17 @@ import numpy as np
 
 
 def check_type(distances):
-    """ 
+    """ Checks the type of the input distance matrix
+        to be compliant with rust implementation.
+
+        Args:
+            distances: distance matrix, array like
+
+        Returns:
+            distances: list of list, distance matrix in the right format.
+
+        Raises:
+            TypeError in the event that distance is not a 2d array like.
     """
     if isinstance(distances, np.ndarray):
         distances = distances.astype(np.float64)
@@ -31,7 +41,15 @@ def compute_cost(route: list, distances: np.ndarray) -> float:
     return c
 
 def get_best_from_batch(routes: list, distances: np.ndarray):
-    """  
+    """ Retrieves best solution from a pool of TSP solutions.
+
+        Args: 
+            routes: list, containing several TSP solutions
+            distances: distance matrix for the TSP instance
+        
+        Returns:
+            list, best route in the pool
+            float, length of the best route
     """
     lengths = [None]*len(routes)
     for i in range(len(routes)):
@@ -40,7 +58,14 @@ def get_best_from_batch(routes: list, distances: np.ndarray):
     return routes[best_id], lengths[best_id]
 
 def get_init_route(nodes: int, seed: int):
-    """ 
+    """ Generate a random initial solution to the TSP.
+
+        Args:
+            nodes: number of nodes in the TSP instance
+            seed: random seed for reproducibility
+
+        Returns:
+            list, solution to the TSP instance.
     """
     np.random.seed(seed)
     init_route = np.random.permutation(nodes)
@@ -51,5 +76,11 @@ def get_init_route(nodes: int, seed: int):
 
 def is_symmetric(distances):
     """ Indicates whether distances is symmetric.
+
+        Args:
+            distances: distance matrix
+        
+        Returns:
+            bool, true is distances is symmetric.
     """
     return np.allclose(np.array(distances), np.array(distances).T)

@@ -1,6 +1,6 @@
 [package]
 name = "tsp_2opt"
-version = "0.1.0"
+version = "0.0.1"
 authors = ["mehdi <mehdi-bs@live.fr>"]
 edition = "2018"
 license = "MIT"

@@ -84,3 +84,4 @@ def is_symmetric(distances):
             bool, true is distances is symmetric.
     """
     return np.allclose(np.array(distances), np.array(distances).T)
+
